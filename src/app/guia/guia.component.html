@@ -1,0 +1,29 @@
+<div class="guia__container">
+
+  <div class="guia__swipe" id='guia__swipe' (scroll)="touchMove()">
+    <div class="guia__step" id="step-{{i}}" *ngFor="let guiaItem of viewContent; let i = index">
+      <picture class="d-flex-center">
+        <source media="(min-width: 650px)" srcset="{{guiaItem.image.desktop}}">
+        <img src="{{guiaItem.image.mobile}}" alt="passo-a-passo meu INSS">
+      </picture>
+      <div class="guia__step--info">
+        <p class="stage-title">{{ guiaItem.title }}</p>
+        <p class="stage-text">{{ guiaItem.description }}</p>
+      </div>
+    </div>
+  </div>
+    
+  <div class="guia__button">
+      <button (click)="nextStep()" >Próximo</button>    
+  </div>
+
+  <div class="guia__navigation">
+    <label 
+      *ngFor="let guiaItem of viewContent; let i = index"
+      class="guia__navigation--item" 
+      [class.active]="currentOffset === offsetPositions[i]"
+    >
+    </label>
+  </div>
+    
+</div>
