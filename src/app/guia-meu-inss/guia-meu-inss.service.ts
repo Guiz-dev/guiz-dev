@@ -5,32 +5,33 @@ import { Injectable } from '@angular/core';
 })
 export class GuiaMeuInssService {
 
-  public createGuiaPortabilidadeObjectView() {
+  public createGuiaPortabilidadeObjectView(): Object {
     return [
       {
         image: {
-          mobile: '../../../assets/images/guia-portabilidade-mobile-1.svg',
-          desktop: '../../../assets/images/guia-portabilidade-desktop-1.svg'
+          mobile: '../../../assets/images/guia-sigepe-mobile-1.svg',
+          desktop: 'assets/images/guia-portabilidade-desktop-1.svg'
         },
-        title: 'Entre no portal do Meu INSS',
-        description: 'Entre no Meu INSS pelo endereço no final do guia com seu CPF e senha.'
+        title: 'Entre no Sigac',
+        description: 'Insira seu CPF e sua senha para acessar o portal do SIGEPE. '
       },
       {
         image: {
-          mobile: '../../../assets/images/guia-portabilidade-mobile-2.svg',
+          mobile: '../../../assets/images/guia-sigepe-mobile-2.svg',
           desktop: '../../../assets/images/guia-portabilidade-desktop-2.svg'
         },
-        title: 'Selecione seu benefício',
-        description: 'Escolha o benefício  no qual fez o empréstimo consignado que vai portar.'
+        title: 'Selecione Consignações',
+        description: 'Escolha o benefício  no qual fez o empréstimo consignado que vai portar. '
       },
       {
         image: {
-          mobile: '../../../assets/images/guia-portabilidade-mobile-3.svg',
+          mobile: '../../../assets/images/guia-sigepe-mobile-3.svg',
           desktop: '../../../assets/images/guia-portabilidade-desktop-3.svg'
         },
-        title: 'Clique em imprimir',
-        description: 'Se estiver no aplicativo, clique em baixar. Aí é só guardar os dados.'
+        title: 'Gerar Autorização da Consignatária',
+        description: 'Escolha a última opção dentro de Consignações. '
       }
     ];
   }
+
 }

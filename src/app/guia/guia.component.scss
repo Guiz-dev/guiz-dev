@@ -1,7 +1,3 @@
-.d-flex-center {
-  display: flex;
-  justify-content: center;
-}
 
 .guia__container {
   align-items: center;
@@ -11,26 +7,19 @@
   width: 100%;
 }
 
-.guia__skip {
-  background: none;
-  border: 0;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 25px 16px;
-  position: absolute;
-  right: 0;
-}
-
 .guia__swipe {
   -webkit-overflow-scrolling: touch;
-  background: #2f9cd8;
   display: flex;
   height: 100%;
   overflow-x: auto;
-  padding-top: 76px;
   scroll-snap-type: x mandatory;
   width: 100%;
+
+// @media screen and (width: 767px) {
+//   border-radius: 5px 5px 0 0;
+//   border-top: 0;
+// }  
+
 }
 
 .guia__swipe::-webkit-scrollbar {
@@ -38,15 +27,8 @@
   width: 0;
 }
 
-.guia__swipe::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-.guia__swipe::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .guia__step {
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -63,15 +45,39 @@
 
   &--info {
     background: #fff;
-    height: 100%;
+    max-height: 100%;
+    padding: 16px 16px 32px 16px;
+
+    // @media screen and (width: 767px) {
+    //   padding-top: 0;
+    //   width: 80%;
+    // }
+    
   }
 }
 
-.guia__button {
-  padding: 24px 16px;
+.img-container {
+  background: #039be5;
+  display: flex;
+  justify-content: center;
+  padding-top: 76px;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.margin-b-none {
+  margin-bottom: 0 !important;
+}
+
+.button-padding {
+  padding: 0 16px;
 }
 
 .guia__navigation {
+  align-items: center;
   display: flex;
   margin: 25px;
 
@@ -86,8 +92,26 @@
     text-decoration: none;
     width: 10px;
   }
+
+  .active {
+    background: #039be5;
+    height: 11px;
+    width: 11px;
+  }
+  
 }
 
-.active {
+.button {
+  width: 100%;
   background: #039be5;
+  height: 50px;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.guia__button {
+  width: 100%;
+  padding: 0 16px;
 }

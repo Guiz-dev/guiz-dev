@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { GuiaMeuInssService } from './guia-meu-inss.service';
+import { DigitalDataService } from '../digital-data.service';
+import { EventEmitter } from 'protractor';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-guia-meu-inss',
@@ -8,14 +11,26 @@ import { GuiaMeuInssService } from './guia-meu-inss.service';
 })
 export class GuiaMeuInssComponent implements OnInit {
 
+  guiaInssSteps = {
+    0: 'PortalINSS',
+    1: 'Beneficio',
+    2: 'Imprimir'
+  };
+
   public guiaPortabilidadeViewContent: Object = {};
 
   constructor(
-    private guiaMeuInssService: GuiaMeuInssService
+    private guiaMeuInssService: GuiaMeuInssService,
+    private digitalDataService: DigitalDataService
     ) { }
 
-    ngOnInit() {
-      this.guiaPortabilidadeViewContent = this.guiaMeuInssService.createGuiaPortabilidadeObjectView();
-    }
+  ngOnInit() {
+    this.guiaPortabilidadeViewContent = this.guiaMeuInssService.createGuiaPortabilidadeObjectView();
+    this.digitalDataService.imprima(this.guiaInssSteps[0]);
+  }
+
+  newStep(step: number): void {
+    this.digitalDataService.imprima(this.guiaInssSteps[step]);
+  }
 
 }
