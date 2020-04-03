@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GuiaComponent } from './guia/guia.component';
 import { GuiaMeuInssComponent } from './guia-meu-inss/guia-meu-inss.component';
+import { DisclaimerWhatsappModule } from './shared/disclaimer-whatsapp/disclaimer-whatsapp.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GuiaMeuInssComponent } from './guia-meu-inss/guia-meu-inss.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DisclaimerWhatsappModule
   ],
   providers: [],
   bootstrap: [AppComponent]
